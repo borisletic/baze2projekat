@@ -1,1 +1,2 @@
-# Za bazu se koristi MySql
+# Baze Podataka 2 Projekat (MySQL)
+
