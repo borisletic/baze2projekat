@@ -1,1 +1,1 @@
-# baze2projekat
+# Za bazu se koristi MySql
