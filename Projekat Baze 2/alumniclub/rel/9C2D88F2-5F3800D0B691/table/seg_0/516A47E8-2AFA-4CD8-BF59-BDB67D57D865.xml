@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="516A47E8-2AFA-4CD8-BF59-BDB67D57D865" name="Lokacija">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<generatorID>C60C0F4F-586C-32C3-847F-C2C9700CF228</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idL" id="C2CEC973-548D-87E5-3765-A6D67F8BCEF6">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<generatorID>F02966BB-BD8A-9777-7530-166F1FFBCE16</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NazL" id="F599251F-54A1-0DAF-462A-A831D7D0963C">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<generatorID>9B7CD3A8-26AF-4F90-FD53-913CE58486D3</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6CAD57CC-D2A5-240D-D2C7-9E569EE96E71" name="Lokacija_PK">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<generatorID>3DEA3E78-8464-7289-19F6-0B8B03AB6D0B</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C2CEC973-548D-87E5-3765-A6D67F8BCEF6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

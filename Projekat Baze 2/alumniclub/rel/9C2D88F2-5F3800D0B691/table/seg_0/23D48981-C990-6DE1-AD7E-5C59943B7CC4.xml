@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="23D48981-C990-6DE1-AD7E-5C59943B7CC4" name="sponzorise">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<ownerDesignName>alumniclub</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Donator_idDonatora" id="DDB459ED-FE4A-0DC0-89D2-D596A03DA7F8">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<ownerDesignName>alumniclub</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FDE394AC-0734-B0DF-05DE-63BEA52E6301" referredColumn="C5E1F6B6-F7FF-4B07-D0DE-E61118FAF0A4"/>
+</associations>
+</Column>
+<Column name="Dogadjaj_idD" id="BD5E4210-B6E9-BEF6-43B3-7967D634870A">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<ownerDesignName>alumniclub</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="93739B86-B442-75D2-B84C-1EA2214FC5B1" referredColumn="D6D2BA4C-B7DA-DB49-A8AA-E88005C27AED"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D396AF0B-7336-F459-D59C-230971E767E1" name="sponzorise_PK">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<ownerDesignName>alumniclub</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DDB459ED-FE4A-0DC0-89D2-D596A03DA7F8"/>
+<colUsage columnID="BD5E4210-B6E9-BEF6-43B3-7967D634870A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="206865B0-9E3D-754A-B4BF-B76A63B7DF45" name="sponzorise_Donator_FK">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<generatorID>82A167BB-C763-B770-909E-3FAAA4938FBE</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DDB459ED-FE4A-0DC0-89D2-D596A03DA7F8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="440C892B-FAFF-4144-CCA7-900E81446D0F" name="sponzorise_Dogadjaj_FK">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<generatorID>82A167BB-C763-B770-909E-3FAAA4938FBE</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BD5E4210-B6E9-BEF6-43B3-7967D634870A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

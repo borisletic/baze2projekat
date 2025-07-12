@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8E4155C9-DFB8-DA43-E034-68D0D8CB1118" name="Pojedinacno">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<generatorID>00A24B53-B4B3-0B33-95CD-D4B530FE4882</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idP" id="9A62173C-CEF8-EF7E-8E72-8EAFC3C34E8A">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<generatorID>9D37B2A6-BFA0-B292-F323-0A423C2CA6B6</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NazPo" id="E933A71D-3C5F-211D-0442-6D4C3017745F">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<generatorID>DB3DF426-37F4-7A33-D648-290A4B6063D4</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B6A86A96-1545-78DD-4918-2544EF75A0D9" name="Pojedinacno_PK">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<generatorID>FFCD82E3-7509-0A41-7F03-930E60B7598E</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9A62173C-CEF8-EF7E-8E72-8EAFC3C34E8A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

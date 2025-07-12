@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D0CE8BD5-2334-89EE-951D-2592BB431CBA" name="sastoji se od">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-11 23:22:59 UTC</createdTime>
+<ownerDesignName>alumniclub</ownerDesignName>
+<engineerTo>
+<item key="9C2D88F2-EED3-9528-9596-5F3800D0B691" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="idD" id="2D2592CA-9F4D-4B72-1A3F-EA3805378FB7">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 00:59:02 UTC</createdTime>
+<generatorID>6306316A-9B00-EDD8-93C9-2A60F984DA65</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<engineerTo>
+<item key="9C2D88F2-EED3-9528-9596-5F3800D0B691" value="true"/>
+</engineerTo>
+<referedAttribute>3721404E-219E-7469-AFC5-AFDC447C988A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="idS" id="62E358F1-E7A2-898D-4547-AB7AD23472EF">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 00:59:36 UTC</createdTime>
+<generatorID>E88B08AA-6059-6658-E0EB-A62742A82653</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<engineerTo>
+<item key="9C2D88F2-EED3-9528-9596-5F3800D0B691" value="true"/>
+</engineerTo>
+<referedAttribute>336F61EF-D769-CD7B-8328-0BF5041CD0E1</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

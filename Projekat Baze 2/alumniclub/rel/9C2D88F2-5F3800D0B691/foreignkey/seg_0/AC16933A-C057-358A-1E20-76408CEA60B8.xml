@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="AC16933A-C057-358A-1E20-76408CEA60B8" containerWithKeyObject="A72C4AF4-CBE6-89CF-B011-9C8860C80424" localFKIndex="A1EDE394-5BBA-07AC-7AE4-A231DD0077B8" name="Priznanje_Grupno_FK">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-14 04:04:58 UTC</createdTime>
+<generatorID>236B7665-3F84-9185-C3DC-7EF312D1E6AF</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<referredTableLongName>Grupno</referredTableLongName>
+<arc>092DA250-7C30-03CB-9540-8D30A9B24715</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>BCFB4DB4-469F-A06D-1F6B-11A0460EDC73</referredTableID>
+<keyObject>E710393F-FF9F-3474-3BF4-1148C8668800</keyObject>
+<referredKeyID>E710393F-FF9F-3474-3BF4-1148C8668800</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>idP</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

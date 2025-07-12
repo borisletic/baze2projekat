@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="DB2FE94A-DC80-8BBC-6243-B9213B4BB38A" containerWithKeyObject="814C20D3-BA39-4DD5-7625-801B9EE4003A" localFKIndex="4B8DA46C-A580-E0BB-2A44-78FA0B7EB640" name="Aktivnost_Sesija_FK">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<generatorID>E3B16C07-FBD6-5541-F502-A1CEE0CA2A16</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<referredTableLongName>Sesija</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>92DD0954-F6C3-1647-048D-B787EB555E8D</referredTableID>
+<keyObject>5268E83D-7C5E-B272-EA47-2024648F6126</keyObject>
+<referredKeyID>5268E83D-7C5E-B272-EA47-2024648F6126</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>idS</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

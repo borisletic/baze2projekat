@@ -1,0 +1,287 @@
+-- KOMPLEKSNI UPITI I TRANSAKCIJE
+-- Univerzitetsko udruženje alumnista
+
+-- ===== 1. JEDNOSTAVAN UPIT =====
+-- Spoj dvije tabele sa upotrebom agregacionih funkcija
+-- Broj alumnista po odseku
+
+SELECT 
+    ao.NazAlOd as "Naziv odseka",
+    COUNT(a.idAlumn) as "Broj alumnista",
+    AVG(a.idAlumn) as "Prosečni ID alumnusa"
+FROM ALUMNI_ODSEK ao
+LEFT JOIN ALUMNUS a ON ao.idAlOd = a.idAlOd
+GROUP BY ao.idAlOd, ao.NazAlOd
+ORDER BY COUNT(a.idAlumn) DESC;
+
+-- ===== 2. KOMPLEKSAN UPIT 1 =====
+-- Spoljno spajanje 4 tabele, agregacione funkcije, filtriranje, grupisanje, sortiranje
+-- Detaljni izvještaj o događajima sa brojem učesnika, sesija i donatora
+
+SELECT 
+    d.NazD as "Naziv događaja",
+    d.DatD as "Datum događaja",
+    u.NazU as "Organizator univerzitet",
+    COUNT(DISTINCT uc.idAlumn) as "Broj učesnika",
+    COUNT(DISTINCT s.idS) as "Broj sesija",
+    COUNT(DISTINCT sp.idDonatora) as "Broj donatora",
+    COUNT(DISTINCT p.idP) as "Broj priznanja",
+    CASE 
+        WHEN COUNT(DISTINCT uc.idAlumn) >= 5 THEN 'Veliki događaj'
+        WHEN COUNT(DISTINCT uc.idAlumn) >= 2 THEN 'Srednji događaj'
+        ELSE 'Mali događaj'
+    END as "Kategorija događaja"
+FROM DOGAĐAJ d
+LEFT OUTER JOIN ORGANIZUJE o ON d.idD = o.idD
+LEFT OUTER JOIN UNIVERZITET u ON o.idU = u.idU
+LEFT OUTER JOIN UČESTVUJE uc ON d.idD = uc.idD
+LEFT OUTER JOIN SESIJA s ON d.idD = s.idD
+LEFT OUTER JOIN SPONZORIŠE sp ON d.idD = sp.idD
+LEFT OUTER JOIN PRIZNANJE p ON d.idD = p.idD
+WHERE d.DatD >= '2024-01-01'  -- Filtriranje događaja od 2024. godine
+GROUP BY d.idD, d.NazD, d.DatD, u.NazU
+HAVING COUNT(DISTINCT s.idS) > 0  -- Filtriranje grupa - samo događaji sa sesijama
+ORDER BY COUNT(DISTINCT uc.idAlumn) DESC, d.DatD DESC;
+
+-- ===== 3. KOMPLEKSAN UPIT 2 =====
+-- Spoljno spajanje 5 tabela sa kompleksnim agregatnim funkcijama
+-- Analiza aktivnosti po lokacijama i gradovima
+
+SELECT 
+    g.NazG as "Grad",
+    l.NazL as "Lokacija",
+    COUNT(DISTINCT a.rbrA, a.idS) as "Broj aktivnosti",
+    COUNT(DISTINCT s.idS) as "Broj sesija",
+    COUNT(DISTINCT d.idD) as "Broj događaja",
+    COUNT(DISTINCT k.idK) as "Broj koordinatora",
+    MIN(d.DatD) as "Prvi događaj",
+    MAX(d.DatD) as "Poslednji događaj",
+    ROUND(AVG(DATEDIFF(d.DatD, '2024-01-01')), 2) as "Prosečno vreme od početka godine"
+FROM GRAD g
+LEFT OUTER JOIN NALAZI_SE ns ON g.idG = ns.idG
+LEFT OUTER JOIN LOKACIJA l ON ns.idL = l.idL
+LEFT OUTER JOIN AKTIVNOST a ON l.idL = a.idL
+LEFT OUTER JOIN SESIJA s ON a.idS = s.idS
+LEFT OUTER JOIN DOGAĐAJ d ON s.idD = d.idD
+LEFT OUTER JOIN KOORDINIRA ko ON a.rbrA = ko.rbrA AND a.idS = ko.idS
+LEFT OUTER JOIN KOORDINATOR k ON ko.idK = k.idK
+GROUP BY g.idG, g.NazG, l.idL, l.NazL
+HAVING COUNT(DISTINCT a.rbrA, a.idS) > 0  -- Samo lokacije sa aktivnostima
+ORDER BY COUNT(DISTINCT a.rbrA, a.idS) DESC, g.NazG;
+
+-- ===== 4. KOMPLEKSAN UPIT 3 =====
+-- Hijerarhijska analiza koordinatora sa spoljnim spajanjem
+-- Koordinatori, njihovi nadređeni i podređeni
+
+SELECT 
+    k1.NazK as "Koordinator",
+    k2.NazK as "Nadređeni koordinator",
+    COUNT(DISTINCT k3.idK) as "Broj podređenih",
+    COUNT(DISTINCT ko.rbrA, ko.idS) as "Broj aktivnosti koje koordinira",
+    CASE 
+        WHEN k2.idK IS NULL THEN 'Glavni koordinator'
+        WHEN COUNT(DISTINCT k3.idK) > 0 THEN 'Srednji menadžer'
+        ELSE 'Izvršni koordinator'
+    END as "Tip koordinatora"
+FROM KOORDINATOR k1
+LEFT OUTER JOIN KOORDINATOR k2 ON k1.idK_nadređeni = k2.idK
+LEFT OUTER JOIN KOORDINATOR k3 ON k1.idK = k3.idK_nadređeni
+LEFT OUTER JOIN KOORDINIRA ko ON k1.idK = ko.idK
+GROUP BY k1.idK, k1.NazK, k2.NazK
+ORDER BY COUNT(DISTINCT k3.idK) DESC, COUNT(DISTINCT ko.rbrA, ko.idS) DESC;
+
+-- ===== 5. TRANSAKCIJA =====
+-- Kreiranje novog događaja sa sesijama, aktivnostima i dodela priznanja
+
+DELIMITER //
+CREATE PROCEDURE DodajKompletnDogadjaj(
+    IN p_idD INT,
+    IN p_nazD VARCHAR(100),
+    IN p_opisD TEXT,
+    IN p_datD DATE,
+    IN p_idU INT,
+    IN p_idTd INT
+)
+BEGIN
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+        ROLLBACK;
+        RESIGNAL;
+    END;
+    
+    START TRANSACTION;
+    
+    -- 1. Dodavanje događaja
+    INSERT INTO DOGAĐAJ (idD, NazD, OpisD, DatD) 
+    VALUES (p_idD, p_nazD, p_opisD, p_datD);
+    
+    -- 2. Povezivanje sa univerzitetom
+    INSERT INTO ORGANIZUJE (idU, idD) 
+    VALUES (p_idU, p_idD);
+    
+    -- 3. Dodela tipa događaja
+    INSERT INTO PRIPADA (idD, idTd) 
+    VALUES (p_idD, p_idTd);
+    
+    -- 4. Kreiranje osnovnih sesija
+    INSERT INTO SESIJA (idS, OpisS, idD) VALUES
+    (p_idD * 10 + 1, 'Otvaranje događaja', p_idD),
+    (p_idD * 10 + 2, 'Glavna sesija', p_idD),
+    (p_idD * 10 + 3, 'Zatvaranje događaja', p_idD);
+    
+    -- 5. Dodavanje osnovnih aktivnosti
+    INSERT INTO AKTIVNOST (rbrA, idS, opisA, idL) VALUES
+    (1, p_idD * 10 + 1, 'Registracija učesnika', 1),
+    (2, p_idD * 10 + 1, 'Dobrodošlica', 1),
+    (1, p_idD * 10 + 2, 'Prezentacija', 1),
+    (1, p_idD * 10 + 3, 'Završna reč', 1);
+    
+    -- 6. Kreiranje osnovnog priznanja
+    INSERT INTO PRIZNANJE (idP, NazP, idD) 
+    VALUES (p_idD * 100, CONCAT('Priznanje za ', p_nazD), p_idD);
+    
+    -- 7. Dodavanje kao pojedinačno priznanje
+    INSERT INTO POJEDINAČNO_PRIZNANJE (idP) 
+    VALUES (p_idD * 100);
+    
+    COMMIT;
+    
+    SELECT 'Događaj uspešno kreiran!' as Poruka;
+END //
+DELIMITER ;
+
+-- Poziv transakcije
+CALL DodajKompletnDogadjaj(
+    100, 
+    'Novi Alumni Događaj 2024', 
+    'Test događaj kreiran kroz transakciju', 
+    '2024-12-15', 
+    1, 
+    1
+);
+
+-- ===== 6. KOMPLEKSNA TRANSAKCIJA ZA BRISANJE =====
+-- Brisanje događaja sa svim povezanim podacima
+
+DELIMITER //
+CREATE PROCEDURE ObrisiDogadjajKompletno(
+    IN p_idD INT
+)
+BEGIN
+    DECLARE v_count INT DEFAULT 0;
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+        ROLLBACK;
+        RESIGNAL;
+    END;
+    
+    START TRANSACTION;
+    
+    -- Provera da li događaj postoji
+    SELECT COUNT(*) INTO v_count FROM DOGAĐAJ WHERE idD = p_idD;
+    
+    IF v_count = 0 THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Događaj ne postoji!';
+    END IF;
+    
+    -- 1. Brisanje koordinacije aktivnosti
+    DELETE ko FROM KOORDINIRA ko
+    JOIN AKTIVNOST a ON ko.rbrA = a.rbrA AND ko.idS = a.idS
+    JOIN SESIJA s ON a.idS = s.idS
+    WHERE s.idD = p_idD;
+    
+    -- 2. Brisanje aktivnosti
+    DELETE a FROM AKTIVNOST a
+    JOIN SESIJA s ON a.idS = s.idS
+    WHERE s.idD = p_idD;
+    
+    -- 3. Brisanje sesija
+    DELETE FROM SESIJA WHERE idD = p_idD;
+    
+    -- 4. Brisanje dodeljenih priznanja
+    DELETE FROM DOBIJA_PRIZNANJE 
+    WHERE idP IN (SELECT idP FROM PRIZNANJE WHERE idD = p_idD);
+    
+    -- 5. Brisanje tipova priznanja
+    DELETE FROM GRUPNO_PRIZNANJE 
+    WHERE idP IN (SELECT idP FROM PRIZNANJE WHERE idD = p_idD);
+    
+    DELETE FROM POJEDINAČNO_PRIZNANJE 
+    WHERE idP IN (SELECT idP FROM PRIZNANJE WHERE idD = p_idD);
+    
+    -- 6. Brisanje priznanja
+    DELETE FROM PRIZNANJE WHERE idD = p_idD;
+    
+    -- 7. Brisanje učešća alumnista
+    DELETE FROM UČESTVUJE WHERE idD = p_idD;
+    
+    -- 8. Brisanje sponzorstva
+    DELETE FROM SPONZORIŠE WHERE idD = p_idD;
+    
+    -- 9. Brisanje organizacije
+    DELETE FROM ORGANIZUJE WHERE idD = p_idD;
+    
+    -- 10. Brisanje tipova događaja
+    DELETE FROM PRIPADA WHERE idD = p_idD;
+    
+    -- 11. Brisanje samog događaja
+    DELETE FROM DOGAĐAJ WHERE idD = p_idD;
+    
+    COMMIT;
+    
+    SELECT 'Događaj i svi povezani podaci uspešno obrisani!' as Poruka;
+END //
+DELIMITER ;
+
+-- ===== 7. REPORTING UPITI =====
+
+-- Izvještaj o najaktivnijim alumnistima
+SELECT 
+    a.NazAlumn as "Alumnus",
+    ao.NazAlOd as "Odsek",
+    COUNT(DISTINCT u.idD) as "Broj događaja",
+    COUNT(DISTINCT dp.idP) as "Broj priznanja",
+    CASE 
+        WHEN COUNT(DISTINCT u.idD) >= 4 THEN 'Vrlo aktivan'
+        WHEN COUNT(DISTINCT u.idD) >= 2 THEN 'Aktivan'
+        ELSE 'Manje aktivan'
+    END as "Nivo aktivnosti"
+FROM ALUMNUS a
+LEFT JOIN ALUMNI_ODSEK ao ON a.idAlOd = ao.idAlOd
+LEFT JOIN UČESTVUJE u ON a.idAlumn = u.idAlumn
+LEFT JOIN DOBIJA_PRIZNANJE dp ON a.idAlumn = dp.idAlumn
+GROUP BY a.idAlumn, a.NazAlumn, ao.NazAlOd
+HAVING COUNT(DISTINCT u.idD) > 0
+ORDER BY COUNT(DISTINCT u.idD) DESC, COUNT(DISTINCT dp.idP) DESC;
+
+-- Izvještaj o efikasnosti donatora
+SELECT 
+    d.NazDonatora as "Donator",
+    COUNT(DISTINCT s.idD) as "Broj sponzorisanih događaja",
+    COUNT(DISTINCT uc.idAlumn) as "Ukupno dostignuto alumnista",
+    ROUND(COUNT(DISTINCT uc.idAlumn) / COUNT(DISTINCT s.idD), 2) as "Prosečno alumnista po događaju"
+FROM DONATOR d
+JOIN SPONZORIŠE s ON d.idDonatora = s.idDonatora
+JOIN UČESTVUJE uc ON s.idD = uc.idD
+GROUP BY d.idDonatora, d.NazDonatora
+ORDER BY COUNT(DISTINCT s.idD) DESC, COUNT(DISTINCT uc.idAlumn) DESC;
+
+-- Měsečni izvještaj aktivnosti
+SELECT 
+    YEAR(d.DatD) as "Godina",
+    MONTH(d.DatD) as "Mesec",
+    MONTHNAME(d.DatD) as "Naziv meseca",
+    COUNT(DISTINCT d.idD) as "Broj događaja",
+    COUNT(DISTINCT uc.idAlumn) as "Broj učesnika",
+    COUNT(DISTINCT s.idS) as "Broj sesija",
+    AVG(COUNT(DISTINCT uc.idAlumn)) OVER (
+        PARTITION BY YEAR(d.DatD) 
+        ORDER BY MONTH(d.DatD) 
+        ROWS BETWEEN 2 PRECEDING AND CURRENT ROW
+    ) as "Pokretni prosek učesnika (3 meseca)"
+FROM DOGAĐAJ d
+LEFT JOIN UČESTVUJE uc ON d.idD = uc.idD
+LEFT JOIN SESIJA s ON d.idD = s.idD
+WHERE d.DatD >= '2024-01-01'
+GROUP BY YEAR(d.DatD), MONTH(d.DatD), MONTHNAME(d.DatD)
+ORDER BY YEAR(d.DatD), MONTH(d.DatD);

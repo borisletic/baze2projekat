@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="pripada" directorySegmentName="seg_0" id="B6336411-8D43-E333-6B05-A011B9CA0ED7">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-11 22:50:13 UTC</createdTime>
+<ownerDesignName>alumniclub</ownerDesignName>
+<engineerTo>
+<item key="9C2D88F2-EED3-9528-9596-5F3800D0B691" value="true"/>
+</engineerTo>
+<sourcePk>7EE50BC4-9ADD-C3E1-8FDF-0F2A4FC68FB7</sourcePk>
+<targetPk>823F94E5-E381-DB39-6760-33F6D7D63327</targetPk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>30A477B8-7CDD-BBBD-9B28-5026BDE18AE0</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>4FEB4402-5D7C-F2F6-B2C3-BE8156B6100A</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,214 @@
+-- DML Script za unosenje testnih podataka
+-- Univerzitetsko udruženje alumnista
+
+-- Unosenje osnovnih podataka
+
+-- UNIVERZITET
+INSERT INTO UNIVERZITET (idU, NazU, LokU) VALUES
+(1, 'Univerzitet u Beogradu', 'Studentski trg 1, Beograd'),
+(2, 'Univerzitet u Novom Sadu', 'Dr Zorana Đinđića 1, Novi Sad'),
+(3, 'Univerzitet u Nišu', 'Univerzitetski trg 2, Niš'),
+(4, 'Univerzitet u Kragujevcu', 'Jovana Cvijića bb, Kragujevac');
+
+-- TIP_DOGAĐAJA
+INSERT INTO TIP_DOGAĐAJA (idTd, NazTd, OpisTd) VALUES
+(1, 'Konferencija', 'Naučno-stručna konferencija'),
+(2, 'Networking', 'Događaj za umrežavanje alumnista'),
+(3, 'Donatorska večera', 'Formalni događaj sa donatorima'),
+(4, 'Radionica', 'Edukaciona radionica'),
+(5, 'Proslava', 'Svečana proslava');
+
+-- DONATOR
+INSERT INTO DONATOR (idDonatora, NazDonatora) VALUES
+(1, 'Microsoft Srbija'),
+(2, 'Nordeus'),
+(3, 'Comtrade'),
+(4, 'Telekom Srbija'),
+(5, 'NIS'),
+(6, 'Banca Intesa');
+
+-- GRAD
+INSERT INTO GRAD (idG, NazG) VALUES
+(1, 'Beograd'),
+(2, 'Novi Sad'),
+(3, 'Niš'),
+(4, 'Kragujevac'),
+(5, 'Subotica'),
+(6, 'Pančevo');
+
+-- LOKACIJA
+INSERT INTO LOKACIJA (idL, NazL) VALUES
+(1, 'Sava Centar'),
+(2, 'Hotel Metropol'),
+(3, 'Fakultet tehničkih nauka'),
+(4, 'Dom kulture'),
+(5, 'Kongresni centar'),
+(6, 'Hotel Park'),
+(7, 'Univerzitetska biblioteka'),
+(8, 'Studentski centar');
+
+-- ALUMNI_ODSEK
+INSERT INTO ALUMNI_ODSEK (idAlOd, NazAlOd) VALUES
+(1, 'Elektrotehnički fakultet'),
+(2, 'Fakultet organizacionih nauka'),
+(3, 'Mašinski fakultet'),
+(4, 'Matematički fakultet'),
+(5, 'Ekonomski fakultet'),
+(6, 'Pravni fakultet');
+
+-- KOORDINATOR
+INSERT INTO KOORDINATOR (idK, NazK, idK_nadređeni) VALUES
+(1, 'Marko Petrović', NULL),
+(2, 'Ana Nikolić', 1),
+(3, 'Stefan Jovanović', 1),
+(4, 'Milica Stojanović', 2),
+(5, 'Nikola Mitrović', 2),
+(6, 'Jovana Đorđević', 3),
+(7, 'Miloš Savić', 3);
+
+-- DOGAĐAJ
+INSERT INTO DOGAĐAJ (idD, NazD, OpisD, DatD) VALUES
+(1, 'AI Summit 2024', 'Konferencija o veštačkoj inteligenciji', '2024-03-15'),
+(2, 'Alumni Networking Night', 'Večernji networking događaj', '2024-04-20'),
+(3, 'Tech Innovation Workshop', 'Radionica o tehnološkim inovacijama', '2024-05-10'),
+(4, 'Donatorska večera 2024', 'Godišnja donatorska večera', '2024-06-05'),
+(5, 'Career Fair', 'Sajam karijere za alumniste', '2024-07-12'),
+(6, 'Startup Pitch Day', 'Prezentacija startup projekata', '2024-08-18');
+
+-- SESIJA
+INSERT INTO SESIJA (idS, OpisS, idD) VALUES
+(1, 'Otvaranje konferencije', 1),
+(2, 'Keynote prezentacija', 1),
+(3, 'Panel diskusija', 1),
+(4, 'Networking kokteli', 2),
+(5, 'Prezentacija kompanija', 2),
+(6, 'Praktična radionica AI', 3),
+(7, 'Demo sesija', 3),
+(8, 'Svečana večera', 4),
+(9, 'Prezentacija studenata', 5),
+(10, 'Razgovori sa poslodavcima', 5),
+(11, 'Pitch prezentacije', 6),
+(12, 'Evaluacija projekata', 6);
+
+-- PRIZNANJE
+INSERT INTO PRIZNANJE (idP, NazP, idD) VALUES
+(1, 'Najbolji alumni projekat', 1),
+(2, 'Inovacija godine', 1),
+(3, 'Najbolji networking', 2),
+(4, 'Najbolja radionica', 3),
+(5, 'Najveći donator', 4),
+(6, 'Najbolji CV', 5),
+(7, 'Najbolji startup', 6),
+(8, 'Najbolji tim', 6);
+
+-- GRUPNO_PRIZNANJE
+INSERT INTO GRUPNO_PRIZNANJE (idP, NazivTima) VALUES
+(8, 'Tech Innovators Team');
+
+-- POJEDINAČNO_PRIZNANJE
+INSERT INTO POJEDINAČNO_PRIZNANJE (idP) VALUES
+(1), (2), (3), (4), (5), (6), (7);
+
+-- ALUMNUS
+INSERT INTO ALUMNUS (idAlumn, NazAlumn, idAlOd) VALUES
+(1, 'Petar Marković', 1),
+(2, 'Jelena Stojanović', 2),
+(3, 'Miloš Popović', 1),
+(4, 'Marija Đukić', 3),
+(5, 'Stefan Milić', 4),
+(6, 'Ana Jovanović', 2),
+(7, 'Nikola Stanković', 5),
+(8, 'Milica Radović', 6),
+(9, 'Marko Nikolić', 1),
+(10, 'Jovana Mitrović', 3),
+(11, 'Aleksandar Petrović', 4),
+(12, 'Tamara Savić', 5);
+
+-- AKTIVNOST
+INSERT INTO AKTIVNOST (rbrA, idS, opisA, idL) VALUES
+(1, 1, 'Registracija učesnika', 1),
+(2, 1, 'Dobrodošlica', 1),
+(1, 2, 'Glavna prezentacija', 1),
+(1, 3, 'Diskusija sa panelom', 1),
+(1, 4, 'Kokteli i networking', 2),
+(1, 5, 'Prezentacija Microsoft', 2),
+(2, 5, 'Prezentacija Nordeus', 2),
+(1, 6, 'Praktične vežbe', 3),
+(1, 7, 'Demo aplikacija', 3),
+(1, 8, 'Svečana večera', 2),
+(1, 9, 'Prezentacija studenata', 4),
+(1, 10, 'Razgovori sa HR', 4),
+(1, 11, 'Startup prezentacije', 5),
+(1, 12, 'Ocenjivanje projekata', 5);
+
+-- Vezne tabele
+
+-- ORGANIZUJE
+INSERT INTO ORGANIZUJE (idU, idD) VALUES
+(1, 1), (1, 2), (1, 4),
+(2, 3), (2, 5),
+(3, 6),
+(4, 1);
+
+-- PRIPADA
+INSERT INTO PRIPADA (idD, idTd) VALUES
+(1, 1), (1, 4),
+(2, 2),
+(3, 4),
+(4, 3), (4, 5),
+(5, 2),
+(6, 1);
+
+-- SPONZORIŠE
+INSERT INTO SPONZORIŠE (idDonatora, idD) VALUES
+(1, 1), (1, 2),
+(2, 1), (2, 6),
+(3, 3), (3, 5),
+(4, 4),
+(5, 4),
+(6, 4);
+
+-- KOORDINIRA
+INSERT INTO KOORDINIRA (idK, rbrA, idS) VALUES
+(1, 1, 1), (1, 2, 1),
+(2, 1, 2),
+(3, 1, 3),
+(4, 1, 4),
+(5, 1, 5), (5, 2, 5),
+(6, 1, 6),
+(7, 1, 7);
+
+-- NALAZI_SE
+INSERT INTO NALAZI_SE (idL, idG) VALUES
+(1, 1), (2, 1),
+(3, 2),
+(4, 3),
+(5, 4),
+(6, 2),
+(7, 1),
+(8, 1);
+
+-- UČESTVUJE
+INSERT INTO UČESTVUJE (idAlumn, idD) VALUES
+(1, 1), (1, 2), (1, 6),
+(2, 1), (2, 3), (2, 5),
+(3, 1), (3, 2),
+(4, 3), (4, 4),
+(5, 1), (5, 4), (5, 5),
+(6, 2), (6, 3), (6, 5),
+(7, 4), (7, 5),
+(8, 4), (8, 6),
+(9, 1), (9, 6),
+(10, 3), (10, 4),
+(11, 1), (11, 5),
+(12, 4), (12, 5);
+
+-- DOBIJA_PRIZNANJE
+INSERT INTO DOBIJA_PRIZNANJE (idAlumn, idP) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5),
+(6, 6),
+(7, 7);

@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="931080A2-3716-FACB-E8BE-FC667A165790" name="Priznanje">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-11 22:23:44 UTC</createdTime>
+<ownerDesignName>alumniclub</ownerDesignName>
+<engineerTo>
+<item key="9C2D88F2-EED3-9528-9596-5F3800D0B691" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<subtypesRefType>Arc implementation</subtypesRefType>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="idP" id="9D37B2A6-BFA0-B292-F323-0A423C2CA6B6">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-11 22:23:49 UTC</createdTime>
+<ownerDesignName>alumniclub</ownerDesignName>
+<engineerTo>
+<item key="9C2D88F2-EED3-9528-9596-5F3800D0B691" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NazP" id="2F4FC9F6-6F1D-F016-2A3D-0FAA45E3266E">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-11 22:24:01 UTC</createdTime>
+<ownerDesignName>alumniclub</ownerDesignName>
+<engineerTo>
+<item key="9C2D88F2-EED3-9528-9596-5F3800D0B691" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32</dataTypeSize>
+<ownDataTypeParameters>32,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="idD" id="70EE6621-2E9F-5915-2593-5E27B7475AF4">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-11 22:54:57 UTC</createdTime>
+<generatorID>D07A1B99-052F-DDFB-61CC-3F3A369DAB8B</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<engineerTo>
+<item key="9C2D88F2-EED3-9528-9596-5F3800D0B691" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>3721404E-219E-7469-AFC5-AFDC447C988A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="FFCD82E3-7509-0A41-7F03-930E60B7598E" name="Priznanje PK">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-11 22:24:00 UTC</createdTime>
+<ownerDesignName>alumniclub</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="9C2D88F2-EED3-9528-9596-5F3800D0B691" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>9D37B2A6-BFA0-B292-F323-0A423C2CA6B6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2ED145BD-0F1C-B55F-8C79-FF50D4098694" name="se_nalazi">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<ownerDesignName>alumniclub</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Lokacija_idL" id="28AE41B3-E3A9-846F-4034-197AFA9FC97D">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<ownerDesignName>alumniclub</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AA4A0228-FA6A-F5DA-4392-1276678979A9" referredColumn="C2CEC973-548D-87E5-3765-A6D67F8BCEF6"/>
+</associations>
+</Column>
+<Column name="Grad_idG" id="1FD155DB-D9F9-15DA-9EC8-5B876A6EAFB8">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<ownerDesignName>alumniclub</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2CE697EA-8526-3998-7CBD-5C8FDE5C5DEE" referredColumn="84D5AADF-A413-BDAF-5A8D-3EF844D3425D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="887D4F64-654E-2DDA-DB7E-8F32C929C855" name="se_nalazi_PK">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<ownerDesignName>alumniclub</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="28AE41B3-E3A9-846F-4034-197AFA9FC97D"/>
+<colUsage columnID="1FD155DB-D9F9-15DA-9EC8-5B876A6EAFB8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B87DE075-06E1-A7E5-D724-08629AEC9CCD" name="se_nalazi_Lokacija_FK">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<generatorID>1146C00D-6AD8-2536-5AFA-DED4ACA6AC39</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="28AE41B3-E3A9-846F-4034-197AFA9FC97D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6E6E1F1F-4CAB-D4FD-CF9B-AC2523641B84" name="se_nalazi_Grad_FK">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<generatorID>1146C00D-6AD8-2536-5AFA-DED4ACA6AC39</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1FD155DB-D9F9-15DA-9EC8-5B876A6EAFB8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

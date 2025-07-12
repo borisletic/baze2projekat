@@ -1,0 +1,130 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F8F67965-946E-0426-E7CD-7CD176325377" name="Ima">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<generatorID>FB782616-69CE-6CB0-B274-313697E63F83</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Alumnus_idAlumn" id="83558ECD-E88F-C02F-7518-0BBD76E96FBB">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<generatorID>0B87C667-83FA-8604-EB23-63F246FFD4EE</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4DEDEC8A-FED4-9B91-A87F-54143769CFAC" referredColumn="7CDAEFB9-1F6A-55D4-9AD4-CD2E77420F41"/>
+</associations>
+</Column>
+<Column name="Alumni_odsek_idAlOd" id="E7500B41-58EA-11B5-C9CD-CEFC0E661CC2">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<generatorID>3063DBEF-4A17-FAB1-0026-94D333E7DB59</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B29FE521-9197-9010-88C9-AA04A8C549A7" referredColumn="DE506F99-5E81-D096-CA1F-EEB37A8D483C"/>
+</associations>
+</Column>
+<Column name="Pojedinacno_idP" id="6D9F5429-AF36-470A-B6A2-0F67EDF0A10C">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<generatorID>AA781431-6450-5B98-EAE4-C6D42413653D</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B9C58C36-911E-20D3-6AD3-A6FC3D85F665" referredColumn="9A62173C-CEF8-EF7E-8E72-8EAFC3C34E8A"/>
+</associations>
+</Column>
+<Column name="sastoji_se_od_sastoji_se_od_ID" id="DB4BC6A2-B92C-5FA9-63A2-2CB716859ADD">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<ownerDesignName>alumniclub</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4CC92C99-275C-3A84-2761-13CFC1BCA7B3" referredColumn="E31346BA-EE02-E934-06A3-042A573C4E36"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C5F3463A-5C91-CF6B-A7FD-C97F1237B0A3" name="Ima__IDX">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:34:37 UTC</createdTime>
+<ownerDesignName>alumniclub</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>52DD9258-094F-6E12-2DBE-490554C96A6B</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="83558ECD-E88F-C02F-7518-0BBD76E96FBB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="91063CFF-935B-F68D-77FD-3295C961213D" name="Ima_Alumni_odsek_FK">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<generatorID>BEBE8912-B9A9-830A-4BC5-AB3F142A914E</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E7500B41-58EA-11B5-C9CD-CEFC0E661CC2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8526E73D-29CB-7D12-7AA7-B96A1DFDAC3C" name="Ima_Alumnus_FK">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<generatorID>52DD9258-094F-6E12-2DBE-490554C96A6B</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="83558ECD-E88F-C02F-7518-0BBD76E96FBB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7EBFA9F8-72D5-90A4-7D10-614C38DF0A70" name="Ima_sastoji_se_od_FK">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<generatorID>115C98C1-7DA4-4B2C-A35F-9F45AEA7C487</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DB4BC6A2-B92C-5FA9-63A2-2CB716859ADD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BAE0DDE9-2FCC-D1E0-7A56-1FE4DE4760F9" name="Ima_Pojedinacno_FK">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-14 04:08:41 UTC</createdTime>
+<generatorID>9FBB21D5-352B-639F-0667-C5EBF4F755FE</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6D9F5429-AF36-470A-B6A2-0F67EDF0A10C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="95207761-44A5-DC34-5970-D75FDF43D626" name="pripada">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<ownerDesignName>alumniclub</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Dogadjaj_idD" id="B631B6D6-507C-1290-F042-420AA252A1E1">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<ownerDesignName>alumniclub</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="73F324AF-F946-A76B-F69C-562AEED68E5D" referredColumn="D6D2BA4C-B7DA-DB49-A8AA-E88005C27AED"/>
+</associations>
+</Column>
+<Column name="Tip_dogadjaja_idTd" id="EF74F9E7-F7A5-76C4-723F-280BA30CA85F">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<ownerDesignName>alumniclub</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7E531378-DCB1-7E05-C05C-057B10265759" referredColumn="24888DE2-E4C1-52B0-2335-3B9CD13570D3"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E10D8B72-7201-3A04-5115-6AA850F26A88" name="pripada_PK">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<ownerDesignName>alumniclub</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B631B6D6-507C-1290-F042-420AA252A1E1"/>
+<colUsage columnID="EF74F9E7-F7A5-76C4-723F-280BA30CA85F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A6FD0045-DF2B-A469-E8DD-2F424C5FCC62" name="pripada_Dogadjaj_FK">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<generatorID>B6336411-8D43-E333-6B05-A011B9CA0ED7</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B631B6D6-507C-1290-F042-420AA252A1E1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="79125C93-5F66-DD20-F6B0-D41DFDA8A310" name="pripada_Tip_dogadjaja_FK">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:14:03 UTC</createdTime>
+<generatorID>B6336411-8D43-E333-6B05-A011B9CA0ED7</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EF74F9E7-F7A5-76C4-723F-280BA30CA85F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

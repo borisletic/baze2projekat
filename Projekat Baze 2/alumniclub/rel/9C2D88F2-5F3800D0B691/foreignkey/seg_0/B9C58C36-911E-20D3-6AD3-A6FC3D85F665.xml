@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="B9C58C36-911E-20D3-6AD3-A6FC3D85F665" containerWithKeyObject="F8F67965-946E-0426-E7CD-7CD176325377" localFKIndex="BAE0DDE9-2FCC-D1E0-7A56-1FE4DE4760F9" name="Ima_Pojedinacno_FK">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-14 04:08:41 UTC</createdTime>
+<generatorID>9FBB21D5-352B-639F-0667-C5EBF4F755FE</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<referredTableLongName>Pojedinacno</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>8E4155C9-DFB8-DA43-E034-68D0D8CB1118</referredTableID>
+<keyObject>B6A86A96-1545-78DD-4918-2544EF75A0D9</keyObject>
+<referredKeyID>B6A86A96-1545-78DD-4918-2544EF75A0D9</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>idP</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

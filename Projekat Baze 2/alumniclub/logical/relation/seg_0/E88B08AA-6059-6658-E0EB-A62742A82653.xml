@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="sastoji" directorySegmentName="seg_0" id="E88B08AA-6059-6658-E0EB-A62742A82653">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-11 23:24:47 UTC</createdTime>
+<ownerDesignName>alumniclub</ownerDesignName>
+<engineerTo>
+<item key="9C2D88F2-EED3-9528-9596-5F3800D0B691" value="true"/>
+</engineerTo>
+<sourcePk>1B784A12-3051-5751-4DC9-A0A220655422</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>EBECADB3-0662-7905-00FD-015ACFFFFFAC</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>D0CE8BD5-2334-89EE-951D-2592BB431CBA</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="FB782616-69CE-6CB0-B274-313697E63F83" name="Ima">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 00:44:05 UTC</createdTime>
+<ownerDesignName>alumniclub</ownerDesignName>
+<engineerTo>
+<item key="9C2D88F2-EED3-9528-9596-5F3800D0B691" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="idAlumn" id="0B87C667-83FA-8604-EB23-63F246FFD4EE">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 00:49:46 UTC</createdTime>
+<generatorID>52DD9258-094F-6E12-2DBE-490554C96A6B</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<engineerTo>
+<item key="9C2D88F2-EED3-9528-9596-5F3800D0B691" value="true"/>
+</engineerTo>
+<referedAttribute>2314E227-D13C-D590-A59B-1ADB4938470B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="idAlOd" id="3063DBEF-4A17-FAB1-0026-94D333E7DB59">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:00:36 UTC</createdTime>
+<generatorID>BEBE8912-B9A9-830A-4BC5-AB3F142A914E</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<engineerTo>
+<item key="9C2D88F2-EED3-9528-9596-5F3800D0B691" value="true"/>
+</engineerTo>
+<referedAttribute>A428AEB4-C193-3C49-3764-2729C618E312</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="idP" id="AA781431-6450-5B98-EAE4-C6D42413653D">
+<createdBy>Win 11</createdBy>
+<createdTime>2025-01-12 01:04:42 UTC</createdTime>
+<generatorID>9FBB21D5-352B-639F-0667-C5EBF4F755FE</generatorID>
+<ownerDesignName>alumniclub</ownerDesignName>
+<engineerTo>
+<item key="9C2D88F2-EED3-9528-9596-5F3800D0B691" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>9D37B2A6-BFA0-B292-F323-0A423C2CA6B6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>
